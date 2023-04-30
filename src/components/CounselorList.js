@@ -13,11 +13,7 @@ const CounselorList = ({ counselorList }) => {
   return (
     <li className="counselor" id={counselorList.id}>
       <div className="counselorList__content">
-        <div className="counselorList__userInfo">
-          <div className="counselorList__userInfo--wrapper">
-            <span className="counselorList__title">{counselorList.title}</span>
-          </div>
-        </div>
+        <span className="counselorList__title">{counselorList.title}</span>
         <div className="counselorList__content">{counselorList.content}</div>
         <button onClick={() => handleButtonClick(counselorList.id)}>
           삭제

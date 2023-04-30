@@ -1,12 +1,11 @@
 export const POST = "POST";
 export const DELETE = "DELETE";
-export const postCounselor = (id,title, counselorBody) => {
+export const postCounselor = (title, content) => {
   return {
     type: POST,
     payload: {
-      id,
       title,
-      counselorBody,
+      content,
     },
   };
 };
