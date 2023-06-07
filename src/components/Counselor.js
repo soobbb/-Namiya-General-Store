@@ -1,22 +1,24 @@
 import React, { useState } from "react";
 import CounselorList from "./CounselorList";
 import { useDispatch, useSelector } from "react-redux";
-import { postCounselor } from "../actions";
+import { postCounselor } from "../react-toolkit/counselorSlice";
 
 const Counselor = () => {
   const dispatch = useDispatch();
-  const state = useSelector((state) => state.counselorReducer);
-
-  // const [id, setId] = useState("1");
+  const state = useSelector((state) => {
+    console.log(state);
+    return state.counselorSlice;
+  });
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
 
-  // const handleChangeState = (e) => {};
-
-  const handSubmitClick = (e) => {
+  const handleSubmitClick = (e) => {
     // onCreate(state.title, state.content);
-    dispatch(postCounselor(title, content));
+    dispatch(postCounselor({ title, content }));
+    setTitle("");
+    setContent("");
   };
+
   const handleChangeTitle = (e) => {
     setTitle(e.target.value);
   };
@@ -33,22 +35,25 @@ const Counselor = () => {
           <input
             type="text"
             placeholder="your title here.."
+            value={title}
             onChange={handleChangeTitle}
           ></input>
         </div>
         <div>
           <textarea
             placeholder="your content here.."
+            value={content}
             onChange={handleChangeContent}
           ></textarea>
         </div>
         <div>
-          <button onClick={handSubmitClick}>곰인나누기</button>
+          <button onClick={handleSubmitClick}>곰인나누기</button>
         </div>
       </div>
       <ul className="counselorList">
+        상담리스트
         {state.counselorList.map((item, index) => {
-          return <CounselorList key={index} counselorList={(item)} />;
+          return <CounselorList key={index} counselorList={item} />;
         })}
       </ul>
     </React.Fragment>

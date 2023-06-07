@@ -1,6 +1,7 @@
-import "./App.css";
+import React from "react";
+import { Provider } from "react-redux";
+import store from "./react-toolkit/store";
 import Counselor from "./components/Counselor";
-import CounselorList from "./components/CounselorList";
 
 function App() {
   return (
@@ -11,5 +12,10 @@ function App() {
     </div>
   );
 }
-
-export default App;
+export default function Root() {
+  return (
+    <Provider store={store}>
+      <App />
+    </Provider>
+  );
+}

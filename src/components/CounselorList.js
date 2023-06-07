@@ -1,10 +1,10 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteCounselor } from "../actions";
+import { deleteCounselor } from "../react-toolkit/counselorSlice";
 
 const CounselorList = ({ counselorList }) => {
   const dispatch = useDispatch();
-  const state = useSelector((state) => state.tweetReducer);
+  const state = useSelector((state) => state.counselorSlice);
 
   const handleButtonClick = (counselorListId) => {
     dispatch(deleteCounselor(counselorListId));
