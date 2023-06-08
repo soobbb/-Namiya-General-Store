@@ -5,8 +5,8 @@ export const initialState = {
   counselorList: [
     {
       id: 1,
-      title: "리엑트 넘우 어려워요ㅜㅜ",
-      content: "얻엏에 공부해야 해요?ㅜ",
+      title: "리엑트 너무 어려워요ㅜㅜ",
+      content: "어떻게 공부해야 해요?ㅜ",
     },
     {
       id: 5,
@@ -15,7 +15,7 @@ export const initialState = {
     },
     {
       id: 2,
-      title: "weather is fucking so good",
+      title: "weather is so good",
       content: "real good",
     },
   ],

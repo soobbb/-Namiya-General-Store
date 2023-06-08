@@ -4,13 +4,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { postCounselor } from "../react-toolkit/counselorSlice";
 
 const Counselor = () => {
+  const [title, setTitle] = useState("");
+  const [content, setContent] = useState("");
   const dispatch = useDispatch();
   const state = useSelector((state) => {
     console.log(state);
     return state.counselorSlice;
   });
-  const [title, setTitle] = useState("");
-  const [content, setContent] = useState("");
 
   const handleSubmitClick = (e) => {
     // onCreate(state.title, state.content);
