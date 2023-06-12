@@ -21,6 +21,15 @@ export const initialState = {
   ],
 };
 
+// const getProducts = () => {
+//   fetch(`http://cozshopping.codestates-seb.link/api/v1/products?`)
+//     .then((res) => res.json())
+//     .then((data) => {
+//       setItems(data.map((item) => ({ ...item, bookmark: false })));
+//     });
+// };
+
+
 const counselorSlice = createSlice({
   name: "counselorSlice",
   initialState: initialState,
